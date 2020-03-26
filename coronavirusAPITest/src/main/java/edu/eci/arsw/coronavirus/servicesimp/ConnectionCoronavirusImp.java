@@ -45,14 +45,60 @@ public class ConnectionCoronavirusImp implements ConnectionCoronavirus {
 
 	@Override
 	public String getByCountry(String country) throws IOException {
-		// TODO Auto-generated method stub
-		return null;
+		String user = "Mozilla/5.0";
+		String getUrl =  "https://covid-19-coronavirus-statistics.p.rapidapi.com/name/"+country;
+		URL url = new URL(getUrl);
+		
+		HttpURLConnection conexion = (HttpURLConnection) url.openConnection();
+		conexion.setRequestMethod("GET");
+		conexion.setRequestProperty("x-rapidapi-host",  "covid-19-coronavirus-statistics.p.rapidapi.com");
+		conexion.setRequestProperty("x-rapidapi-key", "8de415383amsh00a0362cf475a3fp1406c8jsnd8bb52da6313");
+		
+		int rep = conexion.getResponseCode();
+		
+		if (rep == HttpURLConnection.HTTP_OK) {
+			BufferedReader input = new BufferedReader(new InputStreamReader(conexion.getInputStream()));
+			String line;
+			StringBuffer resp = new StringBuffer();
+			while((line = input.readLine()) != null) {
+				resp.append(line);
+			}
+			input.close();
+			
+			return resp.toString();
+		}
+		else {
+			return "La respuesta no es suficiente";	
+		}	
 	}
 
 	@Override
 	public String getCaseByCountry(String country) throws IOException {
-		// TODO Auto-generated method stub
-		return null;
+		String user = "Mozilla/5.0";
+		String getUrl =  "https://covid-19-coronavirus-statistics.p.rapidapi.com/v1/stats?country="+country;
+		URL url = new URL(getUrl);
+		
+		HttpURLConnection conexion = (HttpURLConnection) url.openConnection();
+		conexion.setRequestMethod("GET");
+		conexion.setRequestProperty("x-rapidapi-host",  "covid-19-coronavirus-statistics.p.rapidapi.com");
+		conexion.setRequestProperty("x-rapidapi-key", "8de415383amsh00a0362cf475a3fp1406c8jsnd8bb52da6313");
+		
+		int rep = conexion.getResponseCode();
+		
+		if (rep == HttpURLConnection.HTTP_OK) {
+			BufferedReader input = new BufferedReader(new InputStreamReader(conexion.getInputStream()));
+			String line;
+			StringBuffer resp = new StringBuffer();
+			while((line = input.readLine()) != null) {
+				resp.append(line);
+			}
+			input.close();
+			
+			return resp.toString();
+		}
+		else {
+			return "La respuesta no es suficiente";	
+		}
 	}
 
 }
