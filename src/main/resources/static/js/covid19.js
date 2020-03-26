@@ -40,9 +40,8 @@ var covid19 = (function() {
 				
 				
 				if (existeElemento(paises, pais.country)) {
-					consola.log(pais.country);
+					
 					var pos = paises.indexOf(pais.country);
-					consola.log(pos);
 					muertes[pos] = muertes[pos] + pais.deaths;
 					infectados[pos] = infectados[pos] + pais.infected;
 					curados[pos] = curados[pos] + pais.cured;
