@@ -9,21 +9,44 @@ var covid19 = (function(){
 	var mostrarCountrys = function(datos){
 		
 		
-		var datosok = JSON.parse(datos);
+		var datos = JSON.parse(datos);
+		datos = datos.data.covid19Stats;
 		
-		alert(datos);
 		
 		if (datos != null){
-			var objetos = datosok.map(function(datos){
+			var objetos = datos.map(function(valor){
 				
-				return {  country: datos.country,infected: datos.confirmed,
-					deaths: datos.deaths,cured: datos.recovered}				
+				return {  country: valor.country,infected: valor.confirmed,
+					deaths: valor.deaths,cured: valor.recovered}				
 				
 			});
-			alert(" datos trnasforms " + objetos);
+			
+			$("table tbody").empty();
+			objetos.map(function(pais){
+				var temp = pais.country
+				while
+				
+				
+			});
 		}
 		
 	}
+	
+	var cantdidadMuertos = function(objetos,pais){
+		var muertos = 0;
+		var infectados=0;
+		var curados=0;
+		objetos.map(function(ob){
+			if(ob.country == pais){
+				muertos += ob.deaths;
+				infectados += ob.infected;
+				curados += ob.cured;
+			}
+		});
+		return 
+	}
+	var cantidadInfectaso
+	
 	
 	
 	/*----------------------------------------------------*/
