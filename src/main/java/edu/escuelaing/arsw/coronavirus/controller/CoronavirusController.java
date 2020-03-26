@@ -1,4 +1,4 @@
-package edu.eci.arsw.coronavirus.controller;
+package edu.escuelaing.arsw.coronavirus.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import edu.eci.arsw.coronavirus.services.ServiceCoronavirus;
+import edu.escuelaing.arsw.coronavirus.services.ServiceCoronavirus;
 
 @RestController
 @RequestMapping("/coronavirus")

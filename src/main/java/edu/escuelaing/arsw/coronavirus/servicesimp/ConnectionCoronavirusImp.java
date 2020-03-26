@@ -1,4 +1,4 @@
-package edu.eci.arsw.coronavirus.servicesimp;
+package edu.escuelaing.arsw.coronavirus.servicesimp;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -8,7 +8,7 @@ import java.net.URL;
 
 import org.springframework.stereotype.Service;
 
-import edu.eci.arsw.coronavirus.services.ConnectionCoronavirus;
+import edu.escuelaing.arsw.coronavirus.services.ConnectionCoronavirus;
 
 @Service("ConnectionCoronavirus")
 public class ConnectionCoronavirusImp implements ConnectionCoronavirus {

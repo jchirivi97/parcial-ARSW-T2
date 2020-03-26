@@ -1,12 +1,12 @@
-package edu.eci.arsw.coronavirus.servicesimp;
+package edu.escuelaing.arsw.coronavirus.servicesimp;
 
 import java.io.IOException;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import edu.eci.arsw.coronavirus.services.ConnectionCoronavirus;
-import edu.eci.arsw.coronavirus.services.ServiceCoronavirus;
+import edu.escuelaing.arsw.coronavirus.services.ConnectionCoronavirus;
+import edu.escuelaing.arsw.coronavirus.services.ServiceCoronavirus;
 
 @Service("ServiceCoronavirus")
 public class ServiceCoronavirusImp implements ServiceCoronavirus  {

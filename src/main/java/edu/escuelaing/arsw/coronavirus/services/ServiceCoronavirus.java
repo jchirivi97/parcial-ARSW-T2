@@ -1,4 +1,4 @@
-package edu.eci.arsw.coronavirus.services;
+package edu.escuelaing.arsw.coronavirus.services;
 
 import java.io.IOException;
 
