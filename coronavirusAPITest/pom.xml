@@ -12,6 +12,8 @@
 		<version>2.2.0.RELEASE</version>
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
+	<packaging>war</packaging>
+	
 
 	<dependencies>
 		<!-- https://mvnrepository.com/artifact/com.mashape.unirest/unirest-java -->
