@@ -20,7 +20,7 @@
 <script src="js/apiCovid19.js"></script>
 </head>
 
-<body>
+<body onload="covid19.allCountrys()" >
 	
 	<div>
 	<center>
@@ -29,7 +29,7 @@
 	</div>
 	
 
-	<table class="table table-dark">
+	<table id="table" class="table table-dark">
 		<thead>
 			<tr>
 				<th scope="col">Country</th>

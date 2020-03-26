@@ -1,63 +1,72 @@
-var covid19 = (function(){
-	
-	
-	var infAllCountrys = function(){
+var covid19 = (function() {
+
+	var infAllCountrys = function() {
 		apiCovid19.allCountrys(mostrarCountrys);
-	
+
 	}
-	
-	var mostrarCountrys = function(datos){
-		
-		
+
+	var existeElemento = function(arreglo, elemento) {
+
+		for (var i = 0; i < arreglo.length; i++) {
+			if (arreglo[i] == elemento) {
+				return true;
+			} else {
+				return false;
+			}
+		}
+	}
+
+	var mostrarCountrys = function(datos) {
+
 		var datos = JSON.parse(datos);
 		datos = datos.data.covid19Stats;
-		
-		
-		if (datos != null){
-			var objetos = datos.map(function(valor){
-				
-				return {  country: valor.country,infected: valor.confirmed,
-					deaths: valor.deaths,cured: valor.recovered}				
-				
+		paises = [];
+		muertes = [];
+		infectados = [];
+		curados = [];
+		if (datos != null) {
+			var objetos = datos.map(function(valor) {
+
+				return {
+					country : valor.country,
+					infected : valor.confirmed,
+					deaths : valor.deaths,
+					cured : valor.recovered
+				}
+
 			});
-			
-			$("table tbody").empty();
-			objetos.map(function(pais){
-				var temp = pais.country
-				while
-				
-				
+
+			objetos.map(function(pais) {
+				if (exiteElemento(paises, pais.country)) {
+					var pos = paises.indexOf(pais.country);
+					muertes[pos] = muertes[pos] + pais.deaths;
+					infectados[pos] = infectados[pos] + pais.infected;
+					curados[pos] = curados[pos] + pais.cured;
+				} else {
+					paises.push(pais.country);
+					muertes.push(pais.infected);
+					infectados.push(pais.deaths);
+					curados.push(pais.cured);
+				}
+
 			});
-		}
-		
-	}
-	
-	var cantdidadMuertos = function(objetos,pais){
-		var muertos = 0;
-		var infectados=0;
-		var curados=0;
-		objetos.map(function(ob){
-			if(ob.country == pais){
-				muertos += ob.deaths;
-				infectados += ob.infected;
-				curados += ob.cured;
+			$("#table tbody").empty();
+			for (var i = 0; i < paises.length; i++) {
+				var columna = '<tr><td>' + paises[i] + '</td><td>' + muertes[i]
+						+ '</td><td>' + infectados[i] + '</td><td>'
+						+ curados[i] + '</td></tr>';
+				$("#table tbody").append(columna);
 			}
-		});
-		return 
+
+		}
+
 	}
-	var cantidadInfectaso
-	
-	
-	
+
 	/*----------------------------------------------------*/
 	return {
-		
+
 		allCountrys : infAllCountrys
-		
+
 	}
-	
-	
-	
-	
-	
+
 })();
