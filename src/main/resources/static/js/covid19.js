@@ -8,7 +8,7 @@ var covid19 = (function() {
 	var existeElemento = function(arreglo, elemento) {
 
 		for (var i = 0; i < arreglo.length; i++) {
-			if (arreglo[i] == elemento) {
+			if (arreglo[i] === elemento) {
 				return true;
 			} else {
 				return false;
@@ -37,12 +37,17 @@ var covid19 = (function() {
 			});
 
 			objetos.map(function(pais) {
-				if (exiteElemento(paises, pais.country)) {
+				
+				
+				if (existeElemento(paises, pais.country)) {
+					consola.log(pais.country);
 					var pos = paises.indexOf(pais.country);
+					consola.log(pos);
 					muertes[pos] = muertes[pos] + pais.deaths;
 					infectados[pos] = infectados[pos] + pais.infected;
 					curados[pos] = curados[pos] + pais.cured;
 				} else {
+					
 					paises.push(pais.country);
 					muertes.push(pais.infected);
 					infectados.push(pais.deaths);
@@ -52,7 +57,8 @@ var covid19 = (function() {
 			});
 			$("#table tbody").empty();
 			for (var i = 0; i < paises.length; i++) {
-				var columna = '<tr><td>' + paises[i] + '</td><td>' + muertes[i]
+				
+				var columna = '<tr scope="row"><td>' + paises[i] + '</td><td>' + muertes[i]
 						+ '</td><td>' + infectados[i] + '</td><td>'
 						+ curados[i] + '</td></tr>';
 				$("#table tbody").append(columna);
