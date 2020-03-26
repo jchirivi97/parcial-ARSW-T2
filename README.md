@@ -45,6 +45,10 @@ Sugerencia realice la implementación de manera incremental. Haga commits regula
  6. La fachada de servicios tendrá un caché que permitirá que llamados que ya se han realizado a las implementaciones concretas con parámetros específicos no se realicen nuevamente. Puede almacenar el llamado como un String con su respectiva respuesta, y comparar el string respectivo. Recuerde que el caché es una estructura de datos. (Hashmap por ejemplo)
  7. Se debe poder extender fácilmente, por ejemplo, es fácil agregar nuevas funcionalidades, o es fácil cambiar el proveedor de una funcionalidad.
  8. Debe utilizar maven para gestionar el ciclo de vida, git y GitHub para almacenar al código fuente y Heroku como plataforma de producción.
+ 
+### Despliegue en Heroku
+ 
+https://jimmy-chirivi-parcialt2-arsw.herokuapp.com/
 
 ### Diagrama de Despliegue
 
