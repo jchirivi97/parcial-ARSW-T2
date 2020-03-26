@@ -20,7 +20,7 @@ var covid19 = (function(){
 					deaths: datos.deaths,cured: datos.recovered}				
 				
 			});
-			alert(" datos trnasformados " + objetos);
+			alert(" datos trnasforms " + objetos);
 		}
 		
 	}
