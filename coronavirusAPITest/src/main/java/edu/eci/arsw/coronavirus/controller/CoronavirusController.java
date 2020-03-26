@@ -35,11 +35,18 @@ public class CoronavirusController {
 			return new ResponseEntity<>(sercon.getByCountry(country),HttpStatus.ACCEPTED);
 		}
 		catch(Exception e){
-			return new ResponseEntity<>("Erro no muestra informacion",HttpStatus.ACCEPTED);
+			return new ResponseEntity<>("Error no muestra informacion",HttpStatus.NOT_FOUND);
 		}
 	}
 	
-	@RequestMapping(path="/cases/{country}",method = ResquestMethod.GET)
-	public ResponseEntity<?> getCasesCountry(@PathVariable(name="country"))
+	@RequestMapping(path="/cases/{country}",method = RequestMethod.GET)
+	public ResponseEntity<?> getCasesCountry(@PathVariable(name="country") String country){
+		try {
+			return new ResponseEntity<>(sercon.getCasesCountry(country),HttpStatus.ACCEPTED);
+		}
+		catch(Exception e) {
+			return new ResponseEntity<>("Error no muestra informacion",HttpStatus.NOT_FOUND);
+		}
+	}
 
 }
