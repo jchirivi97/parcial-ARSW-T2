@@ -3,6 +3,7 @@ package edu.eci.arsw.coronavirus.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -27,5 +28,18 @@ public class CoronavirusController {
 			return new ResponseEntity<>("Error no muesta informacion", HttpStatus.NOT_FOUND);
 		}
 	}
+	
+	@RequestMapping(path="/{country}",method= RequestMethod.GET)
+	public ResponseEntity<?> getcountry(@PathVariable(name="country") String country ){
+		try {
+			return new ResponseEntity<>(sercon.getByCountry(country),HttpStatus.ACCEPTED);
+		}
+		catch(Exception e){
+			return new ResponseEntity<>("Erro no muestra informacion",HttpStatus.ACCEPTED);
+		}
+	}
+	
+	@RequestMapping(path="/cases/{country}",method = ResquestMethod.GET)
+	public ResponseEntity<?> getCasesCountry(@PathVariable(name="country"))
 
 }
