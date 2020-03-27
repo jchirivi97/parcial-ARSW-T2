@@ -9,6 +9,29 @@ Con el objetivo de preparar el examen final del segundo tercio, por favor siga l
 3. Si no ha terminado por completo el último laboratorio, hagalo, si es necesario desde el inicio y completo. En ese laboratorio esta basado el parcial.
 4. Revise la documentación de Google Maps para agregar marcadores a un mapa o revise este [Codepen](https://codepen.io/SitePoint/pen/YWKLzv?editors=0110)
 
+
+### Despliegue en Heroku
+ 
+ Pagina principal:
+https://jimmy-chirivi-parcialt2-arsw.herokuapp.com/
+
+paginas de Backend:
+
+todos los casos:
+https://jimmy-chirivi-parcialt2-arsw.herokuapp.com/coronavirus/allCases
+
+casos por pais:
+
+https://jimmy-chirivi-parcialt2-arsw.herokuapp.com/coronavirus/cases/China
+
+https://jimmy-chirivi-parcialt2-arsw.herokuapp.com/coronavirus/cases/Canada
+
+
+### Despliegue en Heroku
+ 
+https://jimmy-chirivi-parcialt2-arsw.herokuapp.com/
+
+
 ## Descripción del Problema a Solucionar
 
 Usted está muy preocupado por la situación sanitaria que atraviesa el mundo debido al virus COVID-19 popularmente llamado Coronavirus. Es por eso que usted decidió hacer una aplicación web informativa donde se pueda leer fácilmente información estádistica al respecto.
